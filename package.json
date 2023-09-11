@@ -9,7 +9,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "allure-commandline": "^2.24.0"
+  },
   "devDependencies": {
-    "cypress": "^13.1.0"
+    "cypress": "^12.13.0"
   }
 }
