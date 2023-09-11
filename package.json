@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "execute-test": "npx cypress run --headed --env allure=true",
+    "open-report": "allure open",
+    "generate-report": "allure generate allure-results -o allure-report --clean",
+    "clean-report": "rimraf ./allure-report && rimraf ./allure-results",
+    "test": "npm run clean-report && npm run execute-test && npm run generate-report && npm run open-report"
   },
   "keywords": [],
   "author": "",
