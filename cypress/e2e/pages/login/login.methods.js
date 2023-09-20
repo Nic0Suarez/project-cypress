@@ -1,4 +1,5 @@
 import { Logger } from '../../util/logger'
+import { CommonPageMethods } from '../common-page/common-page.methods'
 import { LoginElements } from './login.elements'
 
 
@@ -25,5 +26,13 @@ export class LoginMethods {
 
         Logger.subStep('Click en el Boton de login')
         this.clickOnLoginButton()
+    }
+
+    static verifyWrongPassword() {
+        CommonPageMethods.verifyAlert('Wrong password.')
+    }
+
+    static verifyWrongUser() {
+        CommonPageMethods.verifyAlert('User does not exist.')
     }
 }
