@@ -4,6 +4,7 @@ import { CommonPageElements } from "./common-page.elements";
 export class CommonPageMethods {
 
     static navigateToDemonblaze() {
+        cy.clearCookies();
         cy.visit(CommonPageData.url);
     }
     static clickHome() {
@@ -23,5 +24,10 @@ export class CommonPageMethods {
     }
     static clickSignUp() {
         CommonPageElements.topMenu.signup.click();
+    }
+    static verifyAlert(expectedMessage) {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal(expectedMessage)
+        })
     }
 }    
