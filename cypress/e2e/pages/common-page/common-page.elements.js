@@ -22,4 +22,7 @@ export class CommonPageElements {
             }
         };
     }
+    static get signedUser() {
+        return cy.get('a#nameofuser')
+    }
 }

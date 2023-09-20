@@ -2,6 +2,7 @@ import { Logger } from "../util/logger";
 import { CommonPageData } from "../pages/common-page/common-page.data";
 import { CommonPageMethods } from "../pages/common-page/common-page.methods";
 import { SignupMethods } from "../pages/signup/signup.methods";
+import { LoginData } from "../pages/login/login.data";
 
 //Caso de prueba 1: Registro de usuario válido
 // Paso 1: Navegar a la página de inicio.
@@ -12,8 +13,7 @@ import { SignupMethods } from "../pages/signup/signup.methods";
 
 const user = CommonPageMethods.userRandomGenerator();
 const password = CommonPageMethods.userRandomGenerator(7);
-const invalidUser = 'qweasdzxc12345';
-const invalidPass = 'qweasdzxc12345';
+const userExist = LoginData.validCredentials.username;
 
 describe(CommonPageData.testSuites.registro, () => {
     it('Registro de usuario válido ', () => {
@@ -59,8 +59,8 @@ describe(CommonPageData.testSuites.registro, () => {
 
         Logger.stepNumber(3)
         Logger.step('Completar todos los campos obligatorios con información inválida.')
-        SignupMethods.insertUsername(invalidUser);
-        SignupMethods.insertPassword(invalidPass);
+        SignupMethods.insertUsername(userExist);
+        SignupMethods.insertPassword(userExist);
 
         Logger.stepNumber(4)
         Logger.step('Hacer clic en "Sign up" para registrar el usuario.')
