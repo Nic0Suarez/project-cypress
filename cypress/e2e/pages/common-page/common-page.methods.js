@@ -30,4 +30,15 @@ export class CommonPageMethods {
             expect(str).to.equal(expectedMessage)
         })
     }
+    static userRandomGenerator(length = 10) {
+        let result = "";
+        const characters = 'abcdefghijkmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let count = 0;
+        while (count < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            count++;
+        }
+        return result;
+    }
 }    

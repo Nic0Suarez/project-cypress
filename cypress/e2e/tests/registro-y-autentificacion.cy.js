@@ -10,6 +10,9 @@ import { SignupMethods } from "../pages/signup/signup.methods";
 // Paso 4: Hacer clic en "Sign up" para registrar el usuario.
 // Paso 5: Verificar que se muestre el mensaje "Sign up successful".
 
+const user = CommonPageMethods.userRandomGenerator();
+const password = CommonPageMethods.userRandomGenerator(7);
+
 describe(CommonPageData.testSuites.registroYAutentificacion, () => {
     it('Registro de usuario válido', () => {
 
@@ -23,8 +26,8 @@ describe(CommonPageData.testSuites.registroYAutentificacion, () => {
 
         Logger.stepNumber(3)
         Logger.step('Completar todos los campos obligatorios con información válida.')
-        SignupMethods.insertUsername('sdwa');
-        SignupMethods.insertPassword('sdwa');
+        SignupMethods.insertUsername(user);
+        SignupMethods.insertPassword(password);
 
         Logger.stepNumber(4)
         Logger.step('Hacer clic en "Sign up" para registrar el usuario.')
