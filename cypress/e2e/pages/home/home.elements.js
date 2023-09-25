@@ -9,7 +9,7 @@ export class HomeElements {
                 return cy.contains('a', 'Laptops');
             },
             get monitors() {
-                return cy.contains('a', 'Monitors');
+                return cy.contains('a', 'Monitors')
             }
         };
     }
