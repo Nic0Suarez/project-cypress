@@ -17,4 +17,8 @@ export class HomeMethods {
     static verifyProductDisplay(productName) {
         HomeElements.product(productName).should('be.visible')
     }
+    static verifyHomeIsShown() {
+        cy.url().should('include', 'index.html', { timeout: 10000 });
+
+    }
 }

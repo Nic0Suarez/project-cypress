@@ -4,13 +4,6 @@ import { CommonPageMethods } from "../pages/common-page/common-page.methods";
 import { SignupMethods } from "../pages/signup/signup.methods";
 import { LoginData } from "../pages/login/login.data";
 
-//Caso de prueba 1: Registro de usuario válido
-// Paso 1: Navegar a la página de inicio.
-// Paso 2: Hacer clic en "Sign up" en la barra de navegación.
-// Paso 3: Completar todos los campos obligatorios con información válida.
-// Paso 4: Hacer clic en "Sign up" para registrar el usuario.
-// Paso 5: Verificar que se muestre el mensaje "Sign up successful".
-
 const user = CommonPageMethods.userRandomGenerator();
 const password = CommonPageMethods.userRandomGenerator(7);
 const userExist = LoginData.validCredentials.username;
@@ -39,13 +32,6 @@ describe(CommonPageData.testSuites.registro, () => {
         Logger.verification('Verificar que se muestre el mensaje "Sign up successful')
         SignupMethods.verifySignUpSucessful();
     });
-
-    // Caso de prueba 2: Registro de usuario inválido
-    // Paso 1: Navegar a la página de inicio.
-    // Paso 2: Hacer clic en "Sign up" en la barra de navegación.
-    // Paso 3: Completar algunos campos con información inválida.
-    // Paso 4: Hacer clic en "Sign up" para registrar el usuario.
-    // Paso 5: Verificar que se muestra un mensaje de error indicando los campos inválidos.
 
     it('Registro de usuario inválido', () => {
 

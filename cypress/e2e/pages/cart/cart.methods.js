@@ -8,4 +8,10 @@ export class cartMethods {
     static verifyProductAdded(productName) {
         cartElements.links.delete(productName).should('be.visible');
     }
+    static verifyCartIsShown() {
+        cy.url().should('include', 'cart.html');
+    }
+    static clickOnPlaceOrderButton() {
+        cartElements.buttons.placeOrder.click();
+    }
 }

@@ -26,12 +26,12 @@ export class PlaceOrderMethods {
     static clickOnButttonPurchase() {
         PlaceOrderElements.buttons.purchase.click();
     }
-    static placeOrderCharging(name, country, city, creditcard, month, year) {
-        this.insertName(name);
-        this.insertCountry(country);
-        this.insertCity(city);
-        this.insertCreditCard(creditcard);
-        this.insertMonth(month);
-        this.insertYear(year);
+    static insertPlaceOrderInformation(data) {
+        this.insertName(data.name);
+        this.insertCountry(data.country);
+        this.insertCity(data.city);
+        this.insertCreditCard(data.creditcard);
+        this.insertMonth(data.month);
+        this.insertYear(data.year);
     }
 }

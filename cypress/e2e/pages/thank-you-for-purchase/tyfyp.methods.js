@@ -6,7 +6,7 @@ export class ThankYouForYourPurchaseMethods {
         ThankYouForYourPurchaseElements.buttons.ok.click();
     }
 
-    verifyGreenCheck() {
+    static verifyGreenCheck() {
         ThankYouForYourPurchaseElements.icons.greencheck.should('exist');
     }
 }
