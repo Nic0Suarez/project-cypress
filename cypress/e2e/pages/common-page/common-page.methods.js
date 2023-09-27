@@ -29,6 +29,13 @@ export class CommonPageMethods {
     static clickSignUp() {
         CommonPageElements.topMenu.signup.click();
     }
+    static clickLogOut() {
+        cy.get('body').then($body => {
+            if ($body.find('#logout2').length > 0) {
+                CommonPageElements.topMenu.logOut.click();
+            }
+        })
+    }
     static verifyAlert(expectedMessage) {
         cy.on('window:alert', (str) => {
             expect(str).to.equal(expectedMessage)

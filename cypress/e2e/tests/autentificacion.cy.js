@@ -5,8 +5,8 @@ import { LoginMethods } from "../pages/login/login.methods";
 import { Logger } from "../util/logger";
 
 describe(CommonPageData.testSuites.autentificacion, () => {
-    it('Inicio de sesión válido', () => {
 
+    it('Inicio de sesión válido', () => {
         Logger.stepNumber(1)
         Logger.step('Navegar a la página de inicio.')
         CommonPageMethods.navigateToDemonblaze();
@@ -27,10 +27,13 @@ describe(CommonPageData.testSuites.autentificacion, () => {
         Logger.stepNumber(5)
         Logger.verification(' Verificar que se redirige al usuario a la página de inicio.')
         CommonPageMethods.verifySignedUser(LoginData.validCredentials.username);
+
+        Logger.postCondition('Log out')
+        CommonPageMethods.clickLogOut();
+
     })
 
     it('Inicio de sesión inválido', () => {
-
         Logger.stepNumber(1)
         Logger.step('Navegar a la página de inicio.')
         CommonPageMethods.navigateToDemonblaze();

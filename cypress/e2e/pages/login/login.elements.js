@@ -1,4 +1,5 @@
 export class LoginElements {
+
     static get textboxes() {
         return {
             get username() {
@@ -9,10 +10,8 @@ export class LoginElements {
             }
         };
     }
-
     static get buttons() {
         return {
-
             get close() {
                 return cy.get('div[id="logInModal"] button').eq(1)
             },
