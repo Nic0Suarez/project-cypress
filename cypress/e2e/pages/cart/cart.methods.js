@@ -1,3 +1,5 @@
+import { CommonPageMethods } from "../common-page/common-page.methods";
+import { LoginMethods } from "../login/login.methods";
 import { cartElements } from "./cart.elements";
 
 export class cartMethods {
@@ -13,5 +15,20 @@ export class cartMethods {
     }
     static clickOnPlaceOrderButton() {
         cartElements.buttons.placeOrder.click();
+    }
+    static deleteProducts() {
+        cy.get('a[onclick*="deleteItem"]').each(link => {
+            link.click();
+            cy.wait(2000)
+        })
+    }
+    static clearCart(username, password) {
+        CommonPageMethods.navigateToDemonblaze();
+        CommonPageMethods.clickLogOut();
+        CommonPageMethods.clickHome();
+        CommonPageMethods.clickLogin();
+        LoginMethods.login(username, password);
+        CommonPageMethods.clickCart();
+        this.deleteProducts();
     }
 }
