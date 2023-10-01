@@ -78,10 +78,8 @@ describe(CommonPageData.testSuites.catalogoYCompras, () => {
         productDetailsMethods.verifyProductAddMessage();
         CommonPageMethods.clickCart();
         cartMethods.verifyProductAdded(product);
-
         Logger.postCondition('Limpiar el carrito y realizar Log out')
         cartMethods.deleteProducts(user.username, user.password);
-        cy.wait(5000)
         CommonPageMethods.clickLogOut();
     })
 
@@ -144,7 +142,7 @@ describe(CommonPageData.testSuites.catalogoYCompras, () => {
         Logger.stepNumber(13)
         Logger.step('Verificar que se muestra un mensaje de confirmación y se redirige al usuario a la página de inicio.')
         ThankYouForYourPurchaseMethods.verifyGreenCheck();
-        cy.wait(3000)
+        cy.wait(2000)
         ThankYouForYourPurchaseMethods.clickOnOkButton();
         HomeMethods.verifyHomeIsShown();
     })
